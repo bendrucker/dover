@@ -1,0 +1,41 @@
+{
+  "name": "dover",
+  "main": "index.js",
+  "version": "0.0.0",
+  "description": "Immutable state objects with event channels",
+  "license": "MIT",
+  "repository": "bendrucker/dover",
+  "author": {
+    "email": "bvdrucker@gmail.com",
+    "name": "Ben Drucker",
+    "url": "bendrucker.me"
+  },
+  "scripts": {
+    "test": "standard && tape test.js"
+  },
+  "keywords": [
+    "channels",
+    "event",
+    "immutable",
+    "mercury"
+  ],
+  "devDependencies": {
+    "ev-store": "~7.0.0",
+    "global": "~4.3.0",
+    "proxyquire": "~1.6.0",
+    "standard": "^4.0.0",
+    "synthetic-dom-events": "Raynos/synthetic-dom-events",
+    "tape": "^4.0.0",
+    "value-event": "~5.1.0"
+  },
+  "files": [
+    "index.js"
+  ],
+  "dependencies": {
+    "dom-delegator": "~13.1.0",
+    "map-values": "~1.0.1",
+    "observ": "~0.2.0",
+    "observ-struct": "~6.0.0",
+    "xtend": "~4.0.0"
+  }
+}
