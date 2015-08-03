@@ -24,7 +24,18 @@ module.exports = function State (state) {
 }
 
 function channels (fns, context) {
-  return mapValues(fns, function createHandle (fn) {
+  fns = mapValues(fns, function createHandle (fn) {
     return Delegator.allocateHandle(fn.bind(null, context))
   })
+
+  Object.defineProperty(fns, 'toJSON', {
+    value: noop,
+    writable: true,
+    configurable: true,
+    enumerable: false
+  })
+
+  return fns
 }
+
+function noop () {}

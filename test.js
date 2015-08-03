@@ -52,3 +52,18 @@ test(function (t) {
   // state should be updated
   t.equal(state().clicked, true)
 })
+
+test('toJSON', function (t) {
+  var state = State({
+    foo: Observ('bar'),
+    channels: {}
+  })
+  t.deepEqual(json(state()), {
+    foo: 'bar'
+  })
+  t.end()
+})
+
+function json (data) {
+  return JSON.parse(JSON.stringify(data))
+}
