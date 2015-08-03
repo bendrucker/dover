@@ -1,7 +1,7 @@
 {
   "name": "dover",
   "main": "index.js",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "Immutable state objects with event channels",
   "license": "MIT",
   "repository": "bendrucker/dover",
