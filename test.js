@@ -3,7 +3,7 @@
 var test = require('tape')
 var Observ = require('observ')
 var document = require('global/document')
-var DOMEvent = require('synthetic-dom-events')
+var dispatchEvent = require('dispatch-event')
 var Delegator = require('dom-delegator')
 var Store = require('ev-store')
 var clickEvent = require('value-event/click')
@@ -43,11 +43,7 @@ test(function (t) {
     clicked: true
   })
 
-  // create an event and dispatch it
-  var event = DOMEvent('click', {
-    bubbles: true
-  })
-  element.dispatchEvent(event)
+  dispatchEvent(element, 'click')
 
   // state should be updated
   t.equal(state().clicked, true)
