@@ -5,6 +5,7 @@ var Struct = require('observ-struct')
 var Observ = require('observ')
 var Delegator = require('dom-delegator')
 var mapValues = require('map-values')
+var isObject = require('is-obj')
 
 module.exports = function State (state) {
   var copy = extend(state)
@@ -19,6 +20,8 @@ module.exports = function State (state) {
   if ($channels) {
     observable.channels.set(channels($channels, observable))
   }
+
+  observable.set = protectSet(observable)
 
   return observable
 }
@@ -36,6 +39,16 @@ function channels (fns, context) {
   })
 
   return fns
+}
+
+function protectSet (observable) {
+  var set = observable.set
+  return function setState (value) {
+    if (isObject(value) && observable.channels) {
+      value.channels = observable.channels()
+    }
+    return set(value)
+  }
 }
 
 function noop () {}

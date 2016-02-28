@@ -49,6 +49,20 @@ test(function (t) {
   t.equal(state().clicked, true)
 })
 
+test('no overwrites via outer set', function (t) {
+  var state = State({
+    channels: {
+      foo: function () {}
+    }
+  })
+
+  var channels = state.channels()
+  state.set({channels: {}})
+  t.equal(state.channels(), channels, 'channels not overwritten by struct.set')
+
+  t.end()
+})
+
 test('toJSON', function (t) {
   var state = State({
     foo: Observ('bar'),
