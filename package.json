@@ -22,7 +22,7 @@
   "devDependencies": {
     "dispatch-event": "~1.0.0",
     "ev-store": "~7.0.0",
-    "global": "~4.3.0",
+    "global": "~4.3.1",
     "proxyquire": "~1.7.10",
     "standard": "^8.0.0",
     "tape": "^4.0.0",
