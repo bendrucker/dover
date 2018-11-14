@@ -1,4 +1,4 @@
-# dover [![Build Status](https://travis-ci.org/bendrucker/dover.svg?branch=master)](https://travis-ci.org/bendrucker/dover)
+# dover [![Build Status](https://travis-ci.org/bendrucker/dover.svg?branch=master)](https://travis-ci.org/bendrucker/dover) [![Greenkeeper badge](https://badges.greenkeeper.io/bendrucker/dover.svg)](https://greenkeeper.io/)
 
 > Immutable state objects with event channels, inspired by [Mercury](https://github.com/raynos/mercury)
 
